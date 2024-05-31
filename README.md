@@ -1,29 +1,15 @@
-# palera1n
-[![GitHub Release](https://img.shields.io/github/v/release/palera1n/palera1n?include_prereleases)](https://github.com/palera1n/palera1n/releases)
-[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/palera1n/palera1n/total)](https://github.com/palera1n/palera1n/releases)
-[![GitHub License](https://img.shields.io/github/license/palera1n/palera1n?color=%23C96FAD)](https://github.com/palera1n/palera1n/blob/main/LICENSE)
+# checkra1n
 
-
-Jailbreak for A8 through A11, T2 devices, on iOS/iPadOS/tvOS 15.0, bridgeOS 5.0 and higher.
-
-
-
-
-| ![Screenshot of macOS Terminal.app](assets/image-1.png)	| 
-|:--:												| 
-| A screenshot of palera1n being used in a Terminal | 
+Jailbreak for A8 through A11, T2 devices, on iOS/iPadOS 15.0 to 17.x bridgeOS 5.0 and higher.
 
 ## Device Support
 
-> [!NOTE]  
-> Apple TV & iBridge support are not currently in the beta releases of palera1n, ETA s0n
-
 <!--- Mobile --->
 
-| iPhone(s)                 | iPad(s)                        		| iPod(s)   					| Apple TV(s) 					|
+| iPhone(s)                 | iPad(s)                        		| iPod(s)   				|						|
 |-							|-										|-								|-								|
-| iPhone 6s                 | iPad mini 4							| iPod Touch (7th generation)	| Apple TV HD                 	|
-| iPhone 6s Plus            | iPad (5th generation)					|								| Apple TV 4K (1st generation)	|
+| iPhone 6s                 | iPad mini 4							| iPod Touch (7th generation)	              	|
+| iPhone 6s Plus            | iPad (5th generation)					|								|
 | iPhone SE (2016)          | iPad (6th generation)					|								|								|
 | iPhone 7                  | iPad (7th generation)					|								|								|
 | iPhone 7 Plus             | iPad Pro (9.7")						|								|								|
@@ -76,21 +62,16 @@ Jailbreak for A8 through A11, T2 devices, on iOS/iPadOS/tvOS 15.0, bridgeOS 5.0 
 
 > USB-C port on Apple Silicon Macs *may* require manual unplugging and replugging of the lightning cable after checkm8 exploit. This problem may be solved by connecting via USB hub, though extensions can vary.
 
-## Installing
-Visit https://palera.in
-
 ## Disclaimers
 We are **NOT** responsible for any data loss, or the result of a device being bricked. When using palera1n, the user should accept responsibility if anything happens to their device during the process.
 - If your device is stuck in recovery, please run futurerestore `--exit-recovery`, or use `irecovery -n`.
 - If you're unable to get out of recovery via these methods please restore with iTunes or Finder.
-- palera1n **will not work** in VirtualBox, VMware or any virtual machine that doesn't support PCI passthrough.
+- checkra1n **will not work** in VirtualBox, VMware or any virtual machine that doesn't support PCI passthrough.
 
 ## Troubleshooting
 Make sure you're following the guides provided [here](https://palera.in), also when asking for support make sure you provide full details on your device, such as:
-- iPhone/iPad/iPod/Apple TV
+- iPhone/iPad/iPod
 - iOS Version
 - Passcode enabled?
-- Verbose from palera1n (specifying `-Vv` within palera1n)
+- Verbose from checkra1n (specifying `-Vv` within checkra1n)
 - Panic logs, if panicked then send latest `panic-full` log from your device.
-
-Create an issue here: https://github.com/palera1n/palera1n/issues/new/choose
