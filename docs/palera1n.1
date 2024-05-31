@@ -5,8 +5,8 @@
 .Dd "30 March 2024"
 .Dt palera1n 1
 .Sh NAME
-.Nm palera1n
-.Nd arm64 iOS/iPadOS/tvOS 15.0-17.5, bridgeOS 5.0-8.3 jailbreaking tool
+.Nm checkra1n
+.Nd arm64 iOS/iPadOS 15.0-17.5, bridgeOS 5.0-8.3 jailbreaking tool
 .Sh SYNOPSIS
 .Nm
 .Op Fl cCdDEfhIlLnpRsSTvV
@@ -20,7 +20,7 @@
 .Op Fl -force-revert
 .Sh DESCRIPTION
 .Nm
-jailbreaks an iOS/iPadOS/tvOS 15.0-17.5, bridgeOS 6.0-8.3 device with an arm64 (arm64e excluded) on iOS 15.0-17.5,
+jailbreaks an iOS/iPadOS 15.0-17.5, bridgeOS 6.0-8.3 device with an arm64 (arm64e excluded) on iOS 15.0-17.5,
 utilizing the
 .Em checkm8
 bootROM exploit.
@@ -31,7 +31,7 @@ On iOS/iPadOS,
 .Nm
 is able to jailbreak the device in fakefs-rootful mode, where /
 is writable, as well as rootless mode, where / cannot be written to.
-On tvOS and bridgeOS,
+On bridgeOS,
 only rootful is supported, and it uses the actual filesystem instead of a fakefs.
 .Pp
 Due to the nature of the
@@ -85,11 +85,6 @@ list of supported devicecs:
 
 .Bl -tag -compact
 .It iPod Touch (7th generation)
-.El
-
-.Bl -tag -compact
-.It Apple TV HD
-.It Apple TV 4K (1st generation)
 .El
 
 .Bl -tag -compact
@@ -214,7 +209,7 @@ where the logic is expected to be in.
 .It Fl R , -reboot-device
 Reboot device in normal mode and exit.
 .It Fl s , -safe-mode
-Enter safe mode. An alert will be displayed on iOS/iPadOS/tvOS. Jailbreak daemons nor early boot executable files
+Enter safe mode. An alert will be displayed on iOS/iPadOS. Jailbreak daemons nor early boot executable files
 specified (see
 .Sy FILES
 section below) will be executed. The loader app and the built in SSH server can still be used,
@@ -305,7 +300,7 @@ option might cause some versions for tvOS to crash and not boot.
 Offical Apple USB-C cables as well as some other USB-C cables cannot be used to enter DFU mode.
 USB-A cable with male USB-C to female USB-A adapter works fine.
 .Sh POST INSTALLATION (iOS/iPadOS)
-The palera1n loader app will take up to 30 seconds to appear on the homescreen after the
+The checkra1n loader app will take up to 30 seconds to appear on the homescreen after the
 device has booted. If it does not appear, you can try using the shortcut:
 .Pp
 .Lk https://www.icloud.com/shortcuts/8cd5f489c8854ee0ab9ee38f2e62f87d
@@ -316,7 +311,7 @@ This will also bootstrap your device.
 A built-in SSH server runs on port 44 on loopback interfaces.
 .Sh POST INSTALLATION (tvOS)
 .Pp
-The palera1n loader app will appear on homescreen. Open the loader and select a package manager to install.
+The checkra1n loader app will appear on homescreen. Open the loader and select a package manager to install.
 This will also bootstrap your device.
 .Pp
 A built-in SSH server runs on port 44 on all interfaces.
