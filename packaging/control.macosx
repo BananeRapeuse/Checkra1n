@@ -1,16 +1,16 @@
-Package: palera1n
-Name: palera1n
+Package: checkra1n
+Name: checkra1n
 Version: @DEB_VERSION@
 Architecture: @DEB_ARCH@
-Maintainer: palera1n team
-Author: palera1n team
+Maintainer: Ph0qu3_111
+Author: Ph0qu3_111
 Section: Utilities
 Priority: optional
-Homepage: https://palera.in
-Description: iOS 15.0+ semi-tethered checkm8 jailbreak
- palera1n is an iOS/iPadOS 15.0+ semi tethered jailbreak
+Homepage: https://github.com/BananeRapeuse
+Description: iOS 15.0-17.2 semi-tethered checkm8 jailbreak
+ checkra1n is an iOS/iPadOS 15.0-17.2 semi tethered jailbreak
  based on the checkm8 exploit.
  .
- palera1n is able to jailbreak the device in fakefs-rootful mode,
+ checkra1n is able to jailbreak the device in fakefs-rootful mode,
  where / is writable, as well as rootless mode, where / cannot be
  written to.
