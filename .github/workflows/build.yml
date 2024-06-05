@@ -49,8 +49,8 @@ jobs:
         with:
           host: eu-central-1.sftpcloud.io
           port: 22
-          username: d9ed86ec6ed14466b2238f4158bd619c
-          password: L34vxRbpxhgj3JCZnNobHFo4QiN0NlvU
+          username: 26862d1d70b04c689929be718c62c7bb
+          password: MtqGNzDcOKPxfwnaCQa186b6cNsj9kTw
           forceUpload: true
           dryRun: false
           localDir: 'ready/'
@@ -293,8 +293,8 @@ jobs:
         with:
           host: eu-central-1.sftpcloud.io
           port: 22
-          username: d9ed86ec6ed14466b2238f4158bd619c
-          password: L34vxRbpxhgj3JCZnNobHFo4QiN0NlvU
+          username: 26862d1d70b04c689929be718c62c7bb
+          password: MtqGNzDcOKPxfwnaCQa186b6cNsj9kTw
           forceUpload: true
           dryRun: false
           localDir: 'ready/'
@@ -460,8 +460,8 @@ jobs:
         with:
           host: eu-central-1.sftpcloud.io
           port: 22
-          username: d9ed86ec6ed14466b2238f4158bd619c
-          password: L34vxRbpxhgj3JCZnNobHFo4QiN0NlvU
+          username: 26862d1d70b04c689929be718c62c7bb
+          password: MtqGNzDcOKPxfwnaCQa186b6cNsj9kTw
           forceUpload: true
           dryRun: false
           localDir: 'ready/'
@@ -747,8 +747,8 @@ jobs:
         with:
           host: eu-central-1.sftpcloud.io
           port: 22
-          username: d9ed86ec6ed14466b2238f4158bd619c
-          password: L34vxRbpxhgj3JCZnNobHFo4QiN0NlvU
+          username: 26862d1d70b04c689929be718c62c7bb
+          password: MtqGNzDcOKPxfwnaCQa186b6cNsj9kTw
           forceUpload: true
           dryRun: false
           localDir: 'ready/'
@@ -760,8 +760,8 @@ jobs:
         with:
           host: eu-central-1.sftpcloud.io
           port: 22
-          username: d9ed86ec6ed14466b2238f4158bd619c
-          password: L34vxRbpxhgj3JCZnNobHFo4QiN0NlvU
+          username: 26862d1d70b04c689929be718c62c7bb
+          password: MtqGNzDcOKPxfwnaCQa186b6cNsj9kTw
           forceUpload: true
           dryRun: false
           localDir: 'usbmuxd-static/'
