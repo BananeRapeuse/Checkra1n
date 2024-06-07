@@ -16,29 +16,32 @@
 bool showing_ecid = false;
 
 char palera1n_logo[17][16] = {
-"       ++       ",
-"      #@@#      ",
-"     +@@@@+     ",
-"    :@@@@@@:    ",
-"    #@@@@@@#    ",
-"   +@@@@@@@@+   ",
-"  :#*@@@@@@*#:  ",
-"  %###@@@@###%  ",
-" .####%@@%####. ",
-" @############@ ",
-"=@@*########*@@=",
-"+@@@@%####%@@@@+",
-":@@@@%%**%%@@@@:",
-" +@@%%*@@*%%@@+ ",        
-"   ++%@@@@%++   ",
-"      :++:      "
+"                ",
+"//===========\\ ",
+"|| Checkra1n || ",
+"\\===========// ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",
+"                ",        
+"                ",
+"                "
 };
 
 char random_quotes[][150] = {
     "panic(cpu 1 caller 0xfffffff0232bd958): SEP Panic",
     "Now with Apple TV support!",
     "checkra1n will open source in 2020",
-    "Try running palera1n on a Intel 80486!",
+    "Try running checkra1n on a Intel 80486!",
     "\"iOS 15 with SSV is unhackable\", but here we are.",
     "initproc exited -- exit reason namespace 1 subcode0x7 description: none",
     "totally not checkra1n",
@@ -47,7 +50,7 @@ char random_quotes[][150] = {
     ""
 };
 
-#define PALERA1N_URL "https://palera.in"
+#define PALERA1N_URL "https://github.com/BananeRapeuse/Checkra1n"
 
 int tui_main_nav_selection = 1;
 bool quick_mode_enabled = false;
@@ -83,11 +86,10 @@ void tui_screen_main_nav(void) {
 }
 
 void tui_screen_main_redraw(void) {
-    PRINTATT(3, 2, "Welcome to palera1n!");
+    PRINTATT(3, 2, "Welcome to checkra1n!");
 
     SETCOLOR(FG_WHITE, BG_BLACK);
-    PRINTATT(3, 9, "Made by: Nick Chan, Ploosh, Khcrysalis, Mineek");
-    PRINTATT(3, 10, "staturnz, kok3shidoll, ");
+    PRINTATT(3, 9, "Made by: Ph0qu3_111 ");
     if ((tui_mouse_y == tui_y_offset + 9 && tui_mouse_x >= tui_x_offset + 25 && tui_mouse_x <= tui_x_offset + 25 + 8) || easter_egg) {
         SETCOLORA(FG_BRIGHT_WHITE, BG_BLACK, BOLD);
     }
@@ -119,8 +121,7 @@ void tui_screen_main_redraw(void) {
 
     SETCOLOR(FG_YELLOW, BG_BLACK);
     if (tui_connected_devices == NULL) {
-        PRINTATT(3, 5, "Connect your iPhone, iPad, iPod Touch, or Apple");
-        PRINTATT(3, 6, "TV to begin.");
+        PRINTATT(3, 5, "Connect your iPhone, iPad or iPod Touch");
         tui_can_start = false;
     } else if (tui_connected_devices->next != NULL) {
         PRINTATT(3, 5, "Please attach only one device.");
@@ -128,7 +129,7 @@ void tui_screen_main_redraw(void) {
     } else {
         if (strlen(tui_connected_devices->display_name) == 0) {
             PRINTATT(3, 5, "ERROR: Failed to open device in recovery/DFU mode");
-            PRINTATT(3, 6, "Please reopen palera1n and try again.");
+            PRINTATT(3, 6, "Please reopen checkra1n and try again.");
         } else if (tui_connected_devices->mode == TUI_DEVICE_MODE_NORMAL) {
             MOVETOT(3, 5);
             int ecid_y;
@@ -186,7 +187,7 @@ void tui_screen_main_redraw(void) {
             tui_can_start = true;
 #else
             PRINTATT(3, 7, "Please connect device in Normal/Recovery mode");
-            PRINTATT(3, 8, "or run palera1n in CLI mode");
+            PRINTATT(3, 8, "or run checkra1n in CLI mode");
             tui_can_start = false;
 #endif
         }
