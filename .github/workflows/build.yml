@@ -288,7 +288,6 @@ jobs:
         uses: tj-actions/branch-names@v7
 
       - name: Upload artifact
-        if: ${{ github.event_name != 'pull_request' }}
         uses: wangyucode/sftp-upload-action@v1.4.8
         with:
           host: eu-central-1.sftpcloud.io
@@ -301,7 +300,6 @@ jobs:
           remoteDir: "/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch || github.ref_name }}/${{ github.run_number }}"
 
       - name: Upload ${{ matrix.os }} thin ${{ matrix.arch }} build
-        if: ${{ github.event_name != 'pull_request' }}
         uses: actions/upload-artifact@v3
         with:
           name: palera1n-${{ matrix.os }}-${{ matrix.arch }}
@@ -309,7 +307,6 @@ jobs:
           retention-days: 1
 
       - name: Upload ${{ matrix.os }} thin ${{ matrix.arch }} build (Development)
-        if: ${{ github.event_name != 'pull_request' }}
         uses: actions/upload-artifact@v3
         with:
           name: palera1n-${{ matrix.os }}-${{ matrix.arch }}.development
@@ -318,7 +315,6 @@ jobs:
 
 
       - name: Upload ${{ matrix.os }} thin ${{ matrix.arch }} debug symbols
-        if: ${{ github.event_name != 'pull_request' }}
         uses: actions/upload-artifact@v3
         with:
           name: palera1n-${{ matrix.os }}-${{ matrix.arch }}.dSYM
@@ -326,7 +322,6 @@ jobs:
           retention-days: 1
       
   darwin-dist:
-    if: ${{ github.event_name != 'pull_request' }}
     runs-on: macos-latest
     needs: build-darwin
     steps:
@@ -455,7 +450,6 @@ jobs:
         uses: tj-actions/branch-names@v7
 
       - name: Upload artifact
-        if: ${{ github.event_name != 'pull_request' }}
         uses: wangyucode/sftp-upload-action@v1.4.8
         with:
           host: eu-central-1.sftpcloud.io
@@ -742,7 +736,6 @@ jobs:
         uses: tj-actions/branch-names@v7
 
       - name: Upload artifact
-        if: ${{ github.event_name != 'pull_request' }}
         uses: wangyucode/sftp-upload-action@v1.4.8
         with:
           host: eu-central-1.sftpcloud.io
@@ -755,7 +748,6 @@ jobs:
           remoteDir: "/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch || github.ref_name }}/${{ github.run_number }}"
 
       - name: Upload usbmuxd artifact
-        if: ${{ github.event_name != 'pull_request' }}
         uses: wangyucode/sftp-upload-action@v1.4.8
         with:
           host: eu-central-1.sftpcloud.io
@@ -769,7 +761,6 @@ jobs:
 
   finish-build:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' }}
     needs: [build-docs, build-darwin, darwin-dist, build-Linux]
     steps:
       - name: Checkout
@@ -788,9 +779,3 @@ jobs:
         with:
           name: '*'
           failOnError: false
-
-      - name: Send Discord build message
-        run: |
-          COMMITMESSAGE=`git log --pretty=format:'- \`%h\` %s' -1 --reverse` &&
-          (curl "${{ secrets.DISCORD_WEBHOOK }}" -sS -H "Content-Type:application/json" -X POST -d "{\"content\":null,\"embeds\":[{\"title\":\"[palera1n:${{ steps.branch-name.outputs.ref_branch }}] Nightly Build ${{ github.run_number }}\",\"url\":\"https://github.com/palera1n/palera1n/actions/runs/${GITHUB_RUN_ID}\",\"color\":2829617,\"fields\":[{\"name\":\"Build tag\",\"value\":\"- \`$(cat build-tag.txt | sed 's|\n||')\`\"},{\"name\":\"Destination\",\"value\":\"- https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch }}/${{ github.run_number }}\"},{\"name\":\"Documentation\",\"value\":\"- [palera1n.1.html](https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch }}/${{ github.run_number }}/docs/palera1n.1.html)\"},{\"name\":\"Main Artifacts\",\"value\":\"- [palera1n-iphoneos-arm64](https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch }}/${{ github.run_number }}/binaries/palera1n-iphoneos-arm64)\n- [palera1n-linux-arm64](https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch }}/${{ github.run_number }}/binaries/palera1n-linux-arm64)\n- [palera1n-linux-armel](https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch }}/${{ github.run_number }}/binaries/palera1n-linux-armel)\n- [palera1n-linux-x86](https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch }}/${{ github.run_number }}/binaries/palera1n-linux-x86)\n- [palera1n-linux-x86_64](https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch }}/${{ github.run_number }}/binaries/palera1n-linux-x86_64)\n- [palera1n-macos-universal](https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/${{ steps.branch-name.outputs.ref_branch }}/${{ github.run_number }}/binaries/palera1n-macos-universal)\"}],\"footer\":{\"text\":\"${{ github.actor }}\", \"icon_url\": \"https://github.com/${{ github.actor }}.png\",\"timestamp\":\"$(date -u +"%FT%TZ")\"}}],\"username\":\"GitHub Actions\",\"avatar_url\":\"https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png\"}")
-    
